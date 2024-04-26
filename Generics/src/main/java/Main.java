@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        Box<Integer> intBox = new Box<>("Integer Box");
+        Box<Integer, Number> intBox = new Box<>("Integer Box");
         intBox.setValue(42);
 
-        Box<String> stringBox = new Box<>("String Box");
+        Box<String, Integer> stringBox = new Box<>("String Box");
         stringBox.setValue("Hello, World!");
 
         System.out.println("Integer value: " + intBox.getValue());
@@ -17,8 +17,11 @@ public class Main {
         }
 
         // Check if boxes have the same name
-        Box<Double> doubleBox = new Box<>("Integer Box");
+        Box<String, Double> doubleBox = new Box<>("Double Box");
         System.out.println("Same name as intBox? " + intBox.hasSameName(doubleBox));
         System.out.println("Same name as stringBox? " + stringBox.hasSameName(doubleBox));
+
+        intBox.setLargestValue(99,38);
+        System.out.println(intBox.largestValue);
     }
 }
