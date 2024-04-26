@@ -28,6 +28,11 @@ public class Main {
         List<Double> doubleNumbers = List.of(3.14, 2.71, 1.618);
         Box<Double, Double> doubleBox = new Box<>("DoubleBox");
         doubleBox.setLargestNumberFromList(doubleNumbers);
-        System.out.println(doubleBox.largestValue);
+
+        List<Integer> integerList = List.of(3,9,27,99,258,2,4);
+        Box<String, Integer> integerBox = new Box<>("IntegerBox");
+        integerBox.setLargestNumberFromList(integerList);
+        integerBox.setValue("Test");
+        System.out.println(integerBox.largestValue);
     }
 }
