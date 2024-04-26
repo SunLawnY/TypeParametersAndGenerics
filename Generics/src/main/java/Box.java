@@ -1,4 +1,6 @@
-class Box<T, V> implements BoxOperations<V> {
+import java.util.*;
+
+class Box<T, V extends Object & Comparable<? super V>> implements BoxOperations<V> {
     private T value;
     private String name;
     V largestValue;
@@ -41,5 +43,11 @@ class Box<T, V> implements BoxOperations<V> {
             System.out.println("It must be a number type");
         }
 
+    }
+
+    public void setLargestNumberFromList (List<V> input){
+        if (!input.isEmpty()) {
+            largestValue = Collections.max(input);
+        }
     }
 }
